@@ -16,6 +16,6 @@
     <div class="input-group input-group-sm mb-3">
         <button type="button" value="Küldés" class="btn btn-primary w-100">Bejelentkezés</button>
     </div>
-    <a href="regisztracio">Regisztráljon új fiókot</a>
+    <a href="regisztracio" class="primary-text">Regisztráljon új fiókot</a>
 </form>
 <h2><br><?= (isset($viewData['uzenet']) ? $viewData['uzenet'] : "") ?><br></h2>

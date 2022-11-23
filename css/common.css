@@ -8,3 +8,7 @@
     color: var(--red);
     font-weight: 600;
 }
+.footer {
+    border-top: 1px solid rgba(0,0,0,.2);
+    background-color: var(--primary);
+}
