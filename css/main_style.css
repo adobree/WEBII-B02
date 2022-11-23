@@ -1,7 +1,7 @@
 
 :root {
     --primary:     #F9F2EC;
-    --whiteblue: #82c1ff;
+    --red: #822333;
     --blackblue: #004180;
     --white: #ffffff;
   }
@@ -12,22 +12,10 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
-#carouselExampleIndicators {
-    height: 50vh;
-}
 .navbar {
     background-color: var(--primary) !important;
 }
-.carousel-inner {
-    height: 100%;
-}
-.carousel-item {
-    height: 100%;
-    position: relative;
-}
-.carousel-item img {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    transform: translateY(30%);
+.nav-item a {
+    color: var(--red);
+    font-weight: bold;
 }
