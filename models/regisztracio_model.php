@@ -3,7 +3,6 @@ class Regisztracio_Model
 {
     public function regisztracio()
     {
-
         $retData['eredmeny'] = "";
         $retData['uzenet'] = "";
         try {
@@ -12,11 +11,11 @@ class Regisztracio_Model
                 $_POST['felhasznalonev'] = trim($_POST['felhasznalonev']);
                 $_POST['email'] = trim($_POST['email']);
                 $_POST['jelszo'] = trim($_POST['jelszo']);
-                // $jogosultsag = "_1_";
+                $jogosultsag = "_1_";
                 if ($_POST['felhasznalonev'] != "" && $_POST['email'] != "" && $_POST['jelszo'] != "") {
                     $retData['eredmeny'] = "OK";
                     $retData['uzenet'] = "Sikeres regisztráció";
-                    $sql = "insert into users values (0, '" . $_POST['felhasznalonev'] . "', '" . $_POST['email'] . "', '" . sha1($_POST['jelszo']) . "')";
+                    $sql = "insert into users values (0, '" . $_POST['felhasznalonev'] . "', '" . $_POST['email'] . "', '" . sha1($_POST['jelszo']) . "', '" . $jogosultsag . "')";
                     $count = $connection->query($sql);
                     $newid = $connection->lastInsertId();
                 } elseif ($_POST['felhasznalonev'] == "" && $_POST['email'] == "" && $_POST['jelszo'] == "") {

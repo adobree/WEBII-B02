@@ -14,7 +14,7 @@
         <input type="password" name="password" id="password" placeholder="jelszó" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required pattern="[\-\.a-zA-Z0-9_]{4}[\-\.a-zA-Z0-9_]+">
     </div>
     <div class="input-group input-group-sm mb-3">
-        <button type="button" value="Küldés" class="btn btn-primary w-100">Bejelentkezés</button>
+        <button type="button" class="btn btn-primary w-100">Bejelentkezés</button>
     </div>
     <a href="regisztracio" class="primary-text">Regisztráljon új fiókot</a>
 </form>

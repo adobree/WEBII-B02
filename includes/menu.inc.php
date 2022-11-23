@@ -31,7 +31,7 @@ class Menu
         if ($submenu != "")
             $submenu = "<ul>" . $submenu . "</ul>";
 
-        return $menu . $submenu;;
+        return $menu . $submenu;
     }
 }
 

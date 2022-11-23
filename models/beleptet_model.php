@@ -4,6 +4,7 @@ class Beleptet_Model
 {
 	public function get_data($vars)
 	{
+		echo 'kiskutya';
 		$retData['eredmeny'] = "";
 		try {
 			$connection = Database::getConnection();
@@ -38,5 +39,3 @@ class Beleptet_Model
 		return $retData;
 	}
 }
-
-?>
