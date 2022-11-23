@@ -18,7 +18,7 @@
 
 <body>
     <header>
-        <div id="user"><em><?= $_SESSION['userlastname'] . " " . $_SESSION['userfirstname'] ?></em></div>
+        <div id="user"><em><?= $_SESSION['username']  ?></em></div>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
