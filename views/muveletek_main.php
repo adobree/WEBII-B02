@@ -1,6 +1,6 @@
 // TODO 3. Feladat + 6. Feladat
 /**
-AJAX -> Lekérés 3 táblából -> JSON -> JS OOP -> megjelenítés
+(3) AJAX -> Lekérés 3 táblából -> JSON -> (6) JS OOP -> megjelenítés
 */
 
 
