@@ -7,7 +7,7 @@ class Beleptet_Model
 		$retData['eredmeny'] = "";
 		try {
 			$connection = Database::getConnection();
-			$sql = "select id, name, email, type from users where name='" . $vars['felhasznalonev'] . "' and password='" . sha1($vars['password']) . "'";
+			$sql = "select id, csaladi_nev, utonev,bejelentkezes, jogosultsag from felhasznalok where bejelentkezes='" . $vars['login'] . "' and jelszo='" . sha1($vars['password']) . "'";
 			$stmt = $connection->query($sql);
 			$felhasznalo = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			switch (count($felhasznalo)) {
@@ -17,12 +17,17 @@ class Beleptet_Model
 					break;
 				case 1:
 					$retData['eredmény'] = "OK";
-					$retData['uzenet'] = "Kedves " . $felhasznalo[0]['name'] . "!<br><br>
+					$retData['uzenet'] = "Kedves " . $felhasznalo[0]['csaladi_nev'] . " " . $felhasznalo[0]['utonev'] . "!<br><br>
 					                      Jó munkát kívánunk rendszerünkkel.<br><br>
 										  Az üzemeltetők";
+					$_SESSION['bejelentkezett'] =  "Bejeletkezett: ";
 					$_SESSION['userid'] =  $felhasznalo[0]['id'];
-					$_SESSION['username'] =  $felhasznalo[0]['name'];
-					$_SESSION['userlevel'] = $felhasznalo[0]['type'];
+					$_SESSION['userlastname'] =  $felhasznalo[0]['csaladi_nev'];
+					$_SESSION['userfirstname'] =  $felhasznalo[0]['utonev'];
+					$_SESSION['user'] =  " (" . $felhasznalo[0]['bejelentkezes'] . ")";
+					$_SESSION['user_comment'] =  $felhasznalo[0]['bejelentkezes'];
+					$_SESSION['userlevel'] = $felhasznalo[0]['jogosultsag'];
+					$_SESSION['loggedin'] = "ok";
 					Menu::setMenu();
 					break;
 				default:

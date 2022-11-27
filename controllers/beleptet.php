@@ -7,13 +7,10 @@ class Beleptet_Controller
 	{
 		$beleptetModel = new Beleptet_Model;
 		$retData = $beleptetModel->get_data($vars);
-		if ($retData['eredmeny'] == "ERROR") {
+		if($retData['eredmeny'] == "ERROR")
 			$this->baseName = "belepes";
-		} else {
-			$this->baseName = "nyitolap";
-		}
-		$view = new View_Loader($this->baseName . '_main');
-		foreach ($retData as $name => $value)
+		$view = new View_Loader($this->baseName.'_main');
+		foreach($retData as $name => $value)
 			$view->assign($name, $value);
 	}
 }
