@@ -1,3 +1,5 @@
+// TODO 1. Feladat
+
 <div class="row w-100 m-0 mt-1">
     <div class="col col-12 col-md-8 home-bg p-5">
         <h1 class="text-center mt-3 primary-text">Üdvözöljük KANG cukrászda honlapján!</h1>

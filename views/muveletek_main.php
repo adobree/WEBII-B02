@@ -1,12 +1,31 @@
+// TODO 3. Feladat + 6. Feladat
+/**
+AJAX -> Lekérés 3 táblából -> JSON -> JS OOP -> megjelenítés
+*/
+
+
 <script>
     class Sutemeny {
         constructor(suti) {
-            this.suti = suti
+            this.nev = suti.nev
+            this.ertek = suti.ertek
+            this.mentes = suti.mentes
         }
-
+        output() {
+            /**
+             * Minden "Sütemény" példány "output" metódusa visszatér egy html elemmel
+             */
+            return `
+                <tr>
+                    <td>${this.nev}</td>
+                    <td>${this.ertek}</td>
+                    <td>${this.mentes}</td>
+                </tr>
+            `
+        }
     }
 
-    function showHint(str) {
+    function showResult(str) {
         console.log(str)
         if (str.length == 0) {
             console.log("if ág")
@@ -17,12 +36,31 @@
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    console.log("RES: ", this)
-                    document.getElementById("eredmeny").innerHTML = this.responseText;
+                    /** JSON */
+                    const responseJson = JSON.parse(this.responseText);
+                    /**
+                     * deklaráljuk az "output" kimenetet
+                     */
+                    let output = '';
+                    /** Végigiterálunk a válaszoln */
+                    responseJson.forEach((item, index) => {
+                        /** Létrehozunk egy példányt */
+                        const sutemeny = new Sutemeny(item);
+                        /** Meghívjuk a példány metódusát */
+                        const returnVal = sutemeny.output();
+                        /** Hozzáadjuk a kimenethez */
+                        output += returnVal;
+                    })
+                    /** Beágyazzuk az eredményt az "eredmeny" html elembe */
+                    document.getElementById('eredmeny').innerHTML = output;
+
+                    // const obj =
+                    //     document.getElementById("eredmeny").innerHTML = this.responseText;
                 }
             }
             xmlhttp.open("GET", "models/sutemeny_model.php?q=" + str, true);
-            xmlhttp.send();
+            const send = xmlhttp.send();
+
         }
     }
 </script>
@@ -34,8 +72,17 @@
         <form action="">
             <div class="d-flex flex-column w-50">
                 <label for=" fname">Keressen süteményt:</label>
-                <input type="text" id="fname" name="fname" onkeyup="showHint(this.value)">
-                <div id="eredmeny"></div>
+                <input type="text" id="fname" name="fname" onkeyup="showResult(this.value)">
+                <table class="table table striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Sütemény</th>
+                            <th scope="col">Ár</th>
+                            <th scope="col">Mentes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="eredmeny"></tbody>
+                </table>
             </div>
         </form>
     </div>
