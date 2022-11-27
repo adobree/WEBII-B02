@@ -5,18 +5,19 @@ $response = "";
 try {
     // echo $suti;
     $connection = Database::getConnection();
-    $sql = "select suti.nev from cukraszda.suti where suti.nev like '%" . $suti . "%'";
+    $sql = "select suti.nev, ar.ertek, tartalom.mentes from cukraszda.suti inner join ar on suti.id = ar.sutiid	inner join tartalom on suti.id = tartalom.sutiid where suti.nev like '%" . $suti . "%'";
+    // $sql = "select suti.nev from cukraszda.suti where suti.nev like '%" . $suti . "%'";
     // $sql = "select nev from suti where nev like '" . $suti . "'";
     $stmt = $connection->query($sql);
     $suti_res = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // echo $suti_res[0]["nev"];
     $talalat = [];
     foreach ($suti_res as $suti) {
-        echo $suti["nev"];
+        echo $suti["nev"] . '<br>';
         // echo var_dump($suti);
         array_push($talalat, $suti);
     }
-    echo "találat: " . var_dump($talalat);
+    // echo "találat: " . var_dump($talalat);
     return json_encode($talalat);
     // echo var_dump($talalat);
     // echo var_dump($suti);
