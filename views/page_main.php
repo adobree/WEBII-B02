@@ -18,7 +18,12 @@
 
 <body>
     <header>
-        <div id="user"><em><?= $_SESSION['username']  ?></em></div>
+        <div id="user"><em>
+        <?php if(!isset($_SESSION['username'])) {
+        $_SESSION['username'] = ""; } else {
+            echo $_SESSION['username']; }
+        ?>
+        </em></div>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
