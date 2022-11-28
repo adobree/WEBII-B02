@@ -1,0 +1,22 @@
+.muveletek-bg {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.muveletek-bg h1 {
+    z-index: 1;
+}
+
+.muveletek-bg img {
+    z-index: -1;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    mask-image: linear-gradient(black, transparent);
+}

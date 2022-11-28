@@ -1,0 +1,14 @@
+.form {
+    width: 400px;
+    padding: 2rem;
+    margin: 2rem auto;
+    background-color: var(--primary);
+}
+.primary-text {
+    color: var(--red);
+    font-weight: 600;
+}
+.footer {
+    border-top: 1px solid rgba(0,0,0,.2);
+    background-color: var(--primary);
+}
