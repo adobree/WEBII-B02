@@ -1,4 +1,4 @@
-// TODO 1. Feladat - reszponzív főoldal
+<!-- TODO 1. Feladat - reszponzív főoldal -->
 
 <div class="row w-100 m-0 mt-1">
     <div class="col col-12 col-md-8 home-bg p-5">

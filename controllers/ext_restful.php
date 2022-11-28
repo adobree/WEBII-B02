@@ -1,8 +1,8 @@
 <?php
 
-class Muveletek_Controller
+class Ext_Restful_Controller
 {
-	public $baseName = 'muveletek';
+	public $baseName = 'ext_restful';
 	public function main(array $vars)
 	{
 		//bet�ltj�k a n�zetet

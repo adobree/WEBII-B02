@@ -1,4 +1,4 @@
-// TODO 2. feladat - OOP PHP, menü adatbázisból, többszintű menü, szerepkörök
+<!-- TODO 2. feladat - OOP PHP, menü adatbázisból, többszintű menü, szerepkörök -->
 
 <?php
 
