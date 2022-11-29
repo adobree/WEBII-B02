@@ -8,7 +8,8 @@
 <body>
 
 <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
-  <script  src="java/ora.js"></script>
-</body>
 
+<script src="java/ora.js"></script>
+
+</body>
 </html>
