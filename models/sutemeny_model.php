@@ -27,6 +27,5 @@ try {
      */
     echo json_encode($talalat);
 } catch (PDOException $error) {
-    echo "kutyageci";
     $response = "Hiba";
 }

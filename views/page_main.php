@@ -16,6 +16,11 @@
     <?php if ($viewData['style']) echo '<link rel="stylesheet" type="text/css" href="' . $viewData['style'] . '">'; ?>
 </head>
 
+<?php if (!isset($_SESSION['bejelentkezett'])) {
+    $_SESSION['username'] = "";
+}
+?>
+
 <body>
     <header>
         <div id="user"><em>
